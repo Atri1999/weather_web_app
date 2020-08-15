@@ -1,0 +1,41 @@
+*{
+    box-sizing: border-box;
+    margin:0px;
+    padding:0px;
+}
+
+.content{
+    max-width: 1200px;
+    background-color: aquamarine;
+    display: grid;
+    margin: auto;
+    padding:2vw;
+}
+
+.search{
+    margin:auto;
+
+}
+
+.inputValue{
+    height:50px;
+    width:500px;
+    font-size: 20px;
+    border-radius: 10px;
+    padding:10px;
+}
+
+.submit{
+    height:50px;
+    width:100px;
+    font-size: 20px;
+    border-radius: 20px;
+}
+
+.result>div{
+    display: flex;
+    flex-direction: column;
+    width:33%;
+    flex: 33% 33% 33%;
+    font-size: 50px;
+}
