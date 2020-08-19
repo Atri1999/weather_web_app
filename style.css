@@ -9,11 +9,10 @@
     background-color: aquamarine;
     display: grid;
     margin:auto;
-    padding:2vw;
 }
 
 .search{
-    margin:auto;
+    margin:50px auto 50px auto;
 
 }
 
@@ -33,14 +32,14 @@
 }
 
 .res_container{
-    margin:auto;
     max-width: 1210px;
     min-width:500px;
     min-height:800px;
     max-height: 1000px;
     display: grid;
-    grid-template-columns:33% 33% 33%;
+    grid-template-columns:33.33% 33.33% 33.33%;
     grid-template-rows: 70% 30%;
+    /*margin:auto;*/
 }
 
 .res_container>div{

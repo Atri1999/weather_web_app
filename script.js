@@ -1,6 +1,15 @@
 var inputValue= document.querySelector('.inputValue')
 var button=document.querySelector('.submit')
 
+var des=document.querySelector('.des')
+var visibility=document.querySelector('.visi_value')
+var temp=document.querySelector('.res_temp')
+var min_temp=document.querySelector('.res_min_temp')
+var max_temp=document.querySelector('.res_max_temp')
+var pressure=document.querySelector('.res_pressure')
+var humid=document.querySelector('.res_humid')
+var wind_speed=document.querySelector('.res_wind_speed')
+var wind_degree=document.querySelector('.res_wind_degree')
 
 
 
@@ -9,9 +18,15 @@ button.addEventListener('click',function(){
         .then(res => res.json())
         .then(data => {
             console.log(data)
-            /*temp.innerHTML=data['main']['temp']
-            wind.innerHTML=data['wind']['speed']
-            cond.innerHTML=data['weather'][0]['main']*/
+            temp.innerHTML=(data['main']['temp']-273.15).toFixed(2)
+            min_temp.innerHTML=(data['main']['temp_min']-273.15).toFixed(2)
+            max_temp.innerHTML=(data['main']['temp_max']-273.15).toFixed(2)
+            pressure.innerHTML=data['main']['pressure']
+            humid.innerHTML=data['main']['humidity']
+            wind_speed.innerHTML=data['wind']['speed']
+            wind_degree.innerHTML=data['wind']['deg']
+            des.innerHTML=data['weather'][0]['main']
+            visibility.innerHTML=data['visibility']
 
         })
     .catch(error=>alert("ERROR"))
