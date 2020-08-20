@@ -37,7 +37,7 @@
 
 .res_container{
     max-width: 1210px;
-    min-width:500px;
+    min-width:300px;
     min-height:800px;
     display: grid;
     grid-template-columns:33.33% 33.33% 33.33%;
@@ -188,7 +188,7 @@
     }
     
     .inputValue{
-        width:400px;
+        width:250px;
     }
 
     .submit{
