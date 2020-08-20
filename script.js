@@ -1,5 +1,6 @@
 var inputValue= document.querySelector('.inputValue')
 var button=document.querySelector('.submit')
+button.disabled=true
 
 var des=document.querySelector('.des')
 var visibility=document.querySelector('.visi_value')
@@ -11,13 +12,22 @@ var humid=document.querySelector('.res_humid')
 var wind_speed=document.querySelector('.res_wind_speed')
 var wind_degree=document.querySelector('.res_wind_degree')
 
-
+inputValue.addEventListener('keyup',function(){
+    if (inputValue.value.length!=0){
+        button.disabled=false
+    }
+    else{
+        button.disabled=true
+    }
+})
 
 button.addEventListener('click',function(){
+     
+          
     fetch('https://api.openweathermap.org/data/2.5/weather?q='+inputValue.value+'&appid=e9cd18f3108059cad2780157cf898537')
         .then(res => res.json())
         .then(data => {
-            console.log(data)
+            console.log(inputValue.value)
             temp.innerHTML=(data['main']['temp']-273.15).toFixed(2)
             min_temp.innerHTML=(data['main']['temp_min']-273.15).toFixed(2)
             max_temp.innerHTML=(data['main']['temp_max']-273.15).toFixed(2)
@@ -30,7 +40,10 @@ button.addEventListener('click',function(){
 
         })
     .catch(error=>alert("The city name is Wrong. Plz enter correct name"))
+    
 })
+
+
 
 
 

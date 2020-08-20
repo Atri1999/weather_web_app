@@ -4,8 +4,6 @@
     padding:0px;
 }
 
-
-
 .content{
     max-width: 1200px;
     background-color: rgb(30, 82, 150);
@@ -24,6 +22,7 @@
     border-radius: 10px;
     padding:10px;
     background-color: rgb(205, 240, 240);
+    outline:none;
 }
 
 .submit{
@@ -33,6 +32,7 @@
     border-radius: 20px;
     background-color: rgb(20, 20, 66);
     color: rgb(230, 221, 188);
+    outline: none;
 }
 
 .res_container{
