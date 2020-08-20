@@ -162,12 +162,13 @@
 @media only screen and (max-width:900px){
     .res_container{
         height:1250px;
+        display: grid;
         grid-template-columns: auto;
         grid-template-rows: 300px 400px 200px;
     }
 
     .des{
-        font-size: 50px;
+        font-size: 40px;
     }
 
     .visi_title,.temper>.temp_title,.temp_title,.pre_title,.humid_title,.wind_title{
