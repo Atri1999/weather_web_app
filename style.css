@@ -161,10 +161,16 @@
 
 @media only screen and (max-width:900px){
     .res_container{
-        height:1250px;
-        display: grid;
-        grid-template-columns: auto;
-        grid-template-rows: 300px 400px 200px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .res_container>div{
+        height:250px;
+    }
+
+    .res_container>.description{
+        height:300px;
     }
 
     .des{
@@ -189,7 +195,7 @@
     }
     
     .inputValue{
-        width:250px;
+        width:220px;
     }
 
     .submit{
