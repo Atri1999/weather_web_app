@@ -29,7 +29,7 @@ button.addEventListener('click',function(){
             visibility.innerHTML=data['visibility']
 
         })
-    .catch(error=>alert("ERROR"))
+    .catch(error=>alert("The city name is Wrong. Plz enter correct name"))
 })
 
 
