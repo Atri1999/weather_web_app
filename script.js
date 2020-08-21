@@ -3,6 +3,7 @@ var button=document.querySelector('.submit')
 button.disabled=true
 
 var des=document.querySelector('.des')
+var loca=document.querySelector('.loc')
 var visibility=document.querySelector('.visi_value')
 var temp=document.querySelector('.res_temp')
 var min_temp=document.querySelector('.res_min_temp')
@@ -16,6 +17,7 @@ var showPosition=function(position){
     fetch('https://api.openweathermap.org/data/2.5/weather?lat='+position.coords.latitude+'&lon='+position.coords.longitude+'&appid=e9cd18f3108059cad2780157cf898537')
     .then(res=>res.json())
     .then(data=>{
+        loca.innerHTML="Your location"
         temp.innerHTML=(data['main']['temp']-273.15).toFixed(2)
         min_temp.innerHTML=(data['main']['temp_min']-273.15).toFixed(2)
         max_temp.innerHTML=(data['main']['temp_max']-273.15).toFixed(2)
@@ -35,6 +37,10 @@ if (navigator.geolocation){
 
 
 inputValue.addEventListener('keyup',function(){
+    if(event.keyCode==13){
+        event.preventDefault()
+        button.click()
+    }
     if (inputValue.value.length!=0){
         button.disabled=false
     }
@@ -43,13 +49,12 @@ inputValue.addEventListener('keyup',function(){
     }
 })
 
-button.addEventListener('click',function(){
-     
-          
+button.addEventListener('click',function(){      
     fetch('https://api.openweathermap.org/data/2.5/weather?q='+inputValue.value+'&appid=e9cd18f3108059cad2780157cf898537')
-        .then(res => res.json())
+        .then(res =>res.json()) 
         .then(data => {
             temp.innerHTML=(data['main']['temp']-273.15).toFixed(2)
+            loca.innerHTML= (data['name'])
             min_temp.innerHTML=(data['main']['temp_min']-273.15).toFixed(2)
             max_temp.innerHTML=(data['main']['temp_max']-273.15).toFixed(2)
             pressure.innerHTML=data['main']['pressure']
@@ -60,8 +65,7 @@ button.addEventListener('click',function(){
             visibility.innerHTML=data['visibility']
 
         })
-    .catch(error=>alert("The city name is Wrong. Plz enter correct name"))
-    
+    .catch(error=>alert("The city name is wrong, please enter a right name."))   
 })
 
 
