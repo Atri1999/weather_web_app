@@ -31,7 +31,9 @@ var showPosition=function(position){
 }
 
 if (navigator.geolocation){
-    navigator.geolocation.getCurrentPosition(showPosition)
+    navigator.geolocation.getCurrentPosition(showPosition,function(){
+        alert("Your location weather will not be initially displyed as location access is not allowed.")
+    })
 }
 
 
