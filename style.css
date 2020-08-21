@@ -74,12 +74,13 @@
 }
 
 .visi_title{
-    padding-top:20px;
+    padding-top:10px;
     font-size: 2vw;
     text-align:bottom;
     height:30%;
 }
 .visi_value{
+    padding-top: 10px;
     height:70%;
     font-size:3vw
 }
