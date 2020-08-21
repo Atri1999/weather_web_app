@@ -32,11 +32,6 @@ if (navigator.geolocation){
     navigator.geolocation.getCurrentPosition(showPosition)
 }
 
-/*(window.addEventListener('resize',function(){
-    if (window.innerWidth<=620){
-        button.innerHTML=''
-    }
-})*/
 
 
 inputValue.addEventListener('keyup',function(){
